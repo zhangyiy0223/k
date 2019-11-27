@@ -224,7 +224,7 @@ if __name__ == "__main__":
         # transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
     train_dataset = TinyImageNetDataset(root, train_list, data_transforms)
-    train_loader = data.DataLoader(train_dataset, batch_size=256, shuffle=True)
+    train_loader = data.DataLoader(train_dataset, batch_size=32, shuffle=True)
     logger.info("Loaded: %s", root + 'train')
     val_dataset = TinyImageNetDataset(root, val_list, data_transforms)
     val_loader = data.DataLoader(val_dataset, batch_size=32, shuffle=True)
