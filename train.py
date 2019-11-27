@@ -212,7 +212,7 @@ if __name__ == "__main__":
 
     # loss function + optimizer
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(net.parameters(), lr=0.0001, momentum=0.9)
+    optimizer = optim.RMSprop(net.parameters(), lr=0.01)
 
     # load train&val data set
     logger.info("Reading data...")
@@ -231,7 +231,7 @@ if __name__ == "__main__":
     logger.info("Loaded: %s", root + 'val')
 
     # train&val the model
-    for epoch in range(10):
+    for epoch in range(30):
         logger.info("-- EPOCH: %s", epoch)
 
         # train the model
